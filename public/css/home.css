@@ -1,0 +1,381 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Smooch Sans";
+}
+
+/* home */
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(hsl(214, 47%, 23%), hsl(230, 47%, 17%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rpc-container {
+  width: 80%;
+  height: 80%;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.heading {
+  width: 40%;
+  height: 80%;
+  background-image: url("../assets/logo.svg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: right;
+}
+
+.roomInp {
+  width: 40%;
+  height: 30%;
+  /* border: 1px solid white; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.roomInp button {
+  width: 60%;
+  height: 50px;
+  font-size: 2em;
+  background-color: rgb(35, 136, 136);
+  border: 1px solid transparent;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+}
+
+/* Create room */
+
+.displayPopup {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  /* border: 1px solid white; */
+  right: 25%;
+  position: absolute;
+  transition: 1s all;
+  z-index: 1;
+
+  /* background-color: white; */
+}
+
+.createRoomBox,
+.joinRoomBox {
+  display: flex;
+  width: 70%;
+  height: 40%;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.errorBox {
+  display: none;
+  width: fit-content;
+  padding: 0px 10px 0px 10px;
+  height: 30px;
+  background-color: rgb(255, 87, 87);
+  color: white;
+
+  border-radius: 5px;
+}
+
+.errorBox p {
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: 600;
+}
+
+.joinRoomHead,
+.createRoomHead {
+  margin: 20px 0px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+  width: 100%;
+  height: 35%;
+  font-size: 2em;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(35, 136, 136);
+  color: rgb(255, 255, 255);
+}
+
+.createRoomHead img,
+.joinRoomHead img {
+  width: 30px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.createRoomInputs,
+.joinRoomContainer {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6em;
+  font-weight: 500;
+  border: 1px solid rgb(35, 136, 136);
+  background-color: white;
+  border-radius: 0px 0px 5px 5px;
+}
+.create-roomname,
+.joinRoomInp {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+.create-roomname input[type="text"],
+.joinRoomInp input[type="text"] {
+  width: 250px;
+  height: 30px;
+  margin: 0px 0px 0px 30px;
+  font-size: 1em;
+  padding: 0px 0px 0px 5px;
+}
+
+/* .create-inputs {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.create-inputs label {
+  cursor: pointer;
+}
+
+.create-inputs input[type="radio"] {
+  margin: 0px 10px 0px 20px;
+  cursor: pointer;
+} */
+.createRoomInputs button,
+.joinRoomContainer button {
+  width: 150px;
+  height: 40px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: hsl(215, 47%, 23%);
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+/* Join room */
+
+.joinRoomcontainer {
+  border: 1px solid black;
+}
+
+/*game*/
+
+.game {
+  display: none;
+}
+
+.gameBox {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gameHeader {
+  width: 80%;
+  height: 180px;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.score {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.score h3 {
+  font-size: 1.5em;
+}
+.score h1 {
+  font-size: 4em;
+}
+
+.gameBoard {
+  width: 80%;
+  height: 40em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameBoard h2 {
+  font-size: 2em;
+  letter-spacing: 1px;
+  color: hsl(217, 16%, 45%);
+}
+
+.gameButtonsBox {
+  width: 70%;
+  height: 80%;
+  background-image: url(/assets/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.fround {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.round {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.round::before {
+  content: "";
+  width: 240px;
+  height: 240px;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out all;
+}
+
+.round:hover::before {
+  content: "";
+  background-color: rgb(151, 151, 151, 0.15);
+  transform: scale(1.05);
+}
+
+#paper {
+  background-image: url(/assets/icon-paper.svg);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  border: 20px solid #4664f4;
+}
+
+#scissors {
+  background-image: url(/assets/icon-scissors.svg);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  border: 20px solid #eb9f0e;
+}
+
+#rock {
+  background-image: url(/assets/icon-rock.svg);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  border: 20px solid #db2e4d;
+}
+
+.waitingBoard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wboxes {
+  width: 30%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.wbox {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+}
+
+.wboxes h3 {
+  font-size: 2.4em;
+  color: white;
+}
+
+.resultBox {
+  width: 40%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.resultBox h1 {
+  font-size: 4em;
+  color: white;
+}
+
+.resultBox button {
+  width: 200px;
+  height: 50px;
+  font-size: 1.5em;
+  letter-spacing: 1.2px;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: rgb(35, 136, 136);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
